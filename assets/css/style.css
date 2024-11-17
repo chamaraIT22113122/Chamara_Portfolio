@@ -49,7 +49,7 @@ h1, h2, h3, h4, h5, h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  background-image: url('/rajaprerak.github.io-master/assets/img/background/bg.jpg');
+  background-image: url('/assets/img/background/bg.jpg');
   transition: ease-in-out 0s;
   position: relative;
   height: 100vh;
@@ -480,33 +480,76 @@ section .container {
 /*--------------------------------------------------------------
 # Interests
 --------------------------------------------------------------*/
-.interests .icon-box {
-  display: flex;
-  align-items: center;
+/* General Container Styling */
+.interests.container {
+  padding: 40px 20px;
+  background-color: #042e5f;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Title */
+.interests .section-title h2 {
+  font-size: 28px;
+  text-align: center;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+/* Icon Box Styling */
+.icon-box {
+  text-align: center;
+  background: #fff;
+  border-radius: 8px;
   padding: 20px;
-  background: #09203a;
-  transition: ease-in-out 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-
-.interests .icon-box i {
-  font-size: 32px;
-  padding-right: 10px;
-  line-height: 1;
+.icon-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.interests .icon-box h3 {
-  font-weight: 700;
-  margin: 0;
+/* Icon Styling */
+.icon-box i {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.icon-box h3 {
+  font-size: 20px;
+  color: #333;
+  margin: 10px 0;
+  font-weight: 500;
+}
+
+/* Sub-Function List Styling */
+.icon-box ul {
+  list-style: none;
   padding: 0;
-  line-height: 1;
-  font-size: 16px;
-  color: #fff;
+  margin: 10px 0 0;
 }
 
-.interests .icon-box:hover {
-  background: #042b56eb;
+.icon-box ul li {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0;
+  line-height: 1.4;
 }
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .icon-box {
+    margin-bottom: 20px;
+  }
+
+  .interests .section-title h2 {
+    font-size: 24px;
+  }
+}
+
 
 /*--------------------------------------------------------------
 # Testimonials
