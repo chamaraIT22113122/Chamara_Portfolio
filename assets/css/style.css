@@ -483,7 +483,7 @@ section .container {
 /* General Container Styling */
 .interests.container {
   padding: 40px 20px;
-  background-color: #042e5f;
+  background-color: 010e1b;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -492,7 +492,7 @@ section .container {
 .interests .section-title h2 {
   font-size: 28px;
   text-align: center;
-  color: #333;
+  color: #fff;
   font-weight: 600;
   margin-bottom: 30px;
 }
@@ -500,7 +500,7 @@ section .container {
 /* Icon Box Styling */
 .icon-box {
   text-align: center;
-  background: #fff;
+  background: #072649;
   border-radius: 8px;
   padding: 20px;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -520,7 +520,7 @@ section .container {
 
 .icon-box h3 {
   font-size: 20px;
-  color: #333;
+  color: #12d63e;
   margin: 10px 0;
   font-weight: 500;
 }
@@ -534,7 +534,7 @@ section .container {
 
 .icon-box ul li {
   font-size: 14px;
-  color: #666;
+  color: #fff;
   margin: 5px 0;
   line-height: 1.4;
 }
