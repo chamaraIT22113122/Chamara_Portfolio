@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TCN Bandara - Digital Business Card</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Creative Background Layers */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      background: #0f2027;
+      overflow: hidden;
+      color: white;
+    }
+
+    /* Gradient Animation Layer */
+    body::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 30% 30%, #1a2980, #26d0ce, #1f4037, #99f2c8);
+      background-size: 400% 400%;
+      animation: moveGradient 30s ease infinite;
+      z-index: -2;
+      opacity: 0.3;
+      filter: blur(60px);
+    }
+
+    @keyframes moveGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Starry Particle Effect */
+    body::after {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: transparent url("") repeat;
+      animation: drift 120s linear infinite;
+      z-index: -1;
+      opacity: 0.1;
+    }
+
+    @keyframes drift {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(-50%, -50%); }
+    }
+
+    /* Card Container */
+    .card {
+      width: 90%;
+      max-width: 420px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 25px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      animation: cardAnimation 0.6s ease-out;
+      z-index: 1;
+    }
+
+    @keyframes cardAnimation {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    /* Profile Section */
+    .profile-info {
+      padding: 20px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.4);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      object-fit: cover;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .profile-info h2 {
+      margin: 10px 0 5px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .profile-info .title {
+      font-weight: bold;
+      color: #f4f4f4;
+    }
+
+    .profile-info p {
+      margin: 5px 0;
+      color: #bbb;
+      font-size: 14px;
+    }
+
+    /* Contact Info */
+    .contact-info {
+      padding: 15px 25px;
+      font-size: 14px;
+      background: rgba(0, 0, 0, 0.4);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .contact-info p {
+      margin: 8px 0;
+    }
+
+    .contact-info a {
+      color: #ddd;
+      text-decoration: none;
+    }
+
+    /* Social Icons */
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      padding: 15px 0;
+      background: rgba(0, 0, 0, 0.4);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .social-icons a {
+      background: #444;
+      color: white;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+
+    .social-icons a:hover {
+      background-color: #4b57d6;
+      transform: scale(1.1);
+    }
+
+    /* Add to Contacts Button */
+    .add-to-contacts {
+      background: #ff5722;
+      border-radius: 50px;
+      padding: 12px 24px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+
+    .add-to-contacts:hover {
+      background-color: #ff7043;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      .social-icons a {
+        width: 40px;
+        height: 40px;
+      }
+
+      .social-icons {
+        gap: 10px;
+      }
+
+      .contact-info p {
+        font-size: 12px;
+      }
+
+      .profile-img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    
+    <!-- Profile -->
+    <div class="profile-info">
+      <img src="1.jpg" alt="TCN Bandara" class="profile-img">
+      <h2>Chamara Nuwan Bandara</h2>
+      <p class="title">Developer & Designer</p>
+      <p>Malabe, Sri Lanka</p>
+      <p>Passionate about creating seamless, user-friendly digital experiences through web development, UI/UX design, app development, and graphic design.</p>
+    </div>
+
+    <!-- Contact -->
+    <div class="contact-info">
+      <p>📞 <a href="tel:+94702481691">+94 70-2481-691</a></p>
+      <p>✉️ <a href="mailto:cn1120693@gmail.com">cn1120693@gmail.com</a></p>
+      <p>🌐 <a href="https://tcnbandara.me" target="_blank">tcnbandara.me</a></p>
+    </div>
+
+    <!-- Social -->
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/thameera-bandara" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/tcnbandara" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="mailto:cn1120693@gmail.com"><i class="fab fa-google"></i></a>
+      <a href="https://www.instagram.com/tcnbandara" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com/tcnbandara" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://wa.me/94702481691" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <!-- vCard Button -->
+    <div style="text-align: center; padding: 15px; background: #4b57d6; color: white;">
+      <a href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AFN%3AChamara%20Nuwan%20Bandara%0AORG%3ADeveloper%20%26%20Designer%0ATEL%3A%2B94702481691%0AEMAIL%3Acn1120693%40gmail.com%0AURL%3Ahttps%3A%2F%2Ftcnbandara.me%0AEND%3AVCARD"
+         download="Chamara_Nuwan_Bandara.vcf"
+         class="add-to-contacts">👤 Add to Contacts</a>
+    </div>
+
+  </div>
+
+</body>
+</html>
