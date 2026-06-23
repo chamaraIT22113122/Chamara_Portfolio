@@ -30,6 +30,7 @@ const Header = () => {
             <li><a href="#skills"> <span>Skills</span></a></li>
             <li><a href={resumeUrl} target="_blank" rel="noopener noreferrer"> <span>Resume</span></a></li>
             <li><a href="#contacts"> <span>Contact</span></a></li>
+            <li><a href="#/login" style={{ opacity: 0.05, cursor: 'pointer', userSelect: 'none' }} title="Admin Login">.</a></li>
           </ul>
         </nav>
 
@@ -40,7 +41,6 @@ const Header = () => {
           <a href="https://www.instagram.com/Cha__m_a" target="_blank" rel="noopener noreferrer" className="instagram"><i className="bx bxl-instagram"></i></a>
           <a href="https://www.facebook.com/chamara.nuwan.332345" target="_blank" rel="noopener noreferrer" className="facebook"><i className="bx bxl-facebook"></i></a>
           <a href="https://wa.me/+94702481691" target="_blank" rel="noopener noreferrer" className="whatsapp"><i className="bx bxl-whatsapp"></i></a>
-          <a href="#/login" style={{ opacity: 0.05 }} title="Admin Login"><i className="bx bx-lock"></i></a>
         </div>
       </div>
     </header>
