@@ -1,0 +1,81 @@
+/* Light Theme Overrides */
+body.light-mode {
+  color: #444;
+}
+
+body.light-mode::before {
+  background: #f4f6f9;
+}
+
+.light-mode #header h1 a,
+.light-mode #header h1 a:hover {
+  color: #333;
+}
+
+.light-mode #header h2 {
+  color: #555;
+}
+
+.light-mode #header .social-links a {
+  background: rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.light-mode #header .social-links a:hover {
+  background: #18d26e;
+  color: #fff;
+}
+
+.light-mode .section-title h2 {
+  color: #333;
+}
+
+.light-mode .about .content h3,
+.light-mode .resume .resume-title,
+.light-mode .resume .resume-item h4 {
+  color: #333;
+}
+
+.light-mode .services .icon-box {
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
+.light-mode .services .icon-box h4 a {
+  color: #333;
+}
+
+.light-mode .services .icon-box p {
+  color: #555;
+}
+
+.light-mode .portfolio #portfolio-flters li {
+  color: #333;
+}
+
+.light-mode .portfolio #portfolio-flters li:hover, 
+.light-mode .portfolio #portfolio-flters li.filter-active {
+  color: #18d26e;
+}
+
+.light-mode .contact .info-box {
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
+.light-mode .contact .info-box h3,
+.light-mode .contact .info-box p {
+  color: #333;
+}
+
+.light-mode .contact .php-email-form {
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
+.light-mode .contact .php-email-form input,
+.light-mode .contact .php-email-form textarea {
+  background: #fafafa;
+  border-color: #ddd;
+  color: #333;
+}
