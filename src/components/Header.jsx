@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { doc, onSnapshot } from 'firebase/firestore';
 import { db } from '../firebase/config';
+import { resolveImagePath } from '../utils/resolveImage';
 
 const Header = () => {
   const [resumeUrl, setResumeUrl] = useState('https://drive.google.com/file/d/1Xw7PZjy3yXD_wo_YKTA7428sq6h_7cB0/view?usp=sharing');
@@ -16,6 +17,33 @@ const Header = () => {
   return (
     <header id="header" className="header-tops">
       <div className="container">
+        <div style={{ marginBottom: '25px', display: 'flex' }}>
+          <img 
+            src={resolveImagePath('dp.jpg')} 
+            alt="TCN Bandara" 
+            style={{ 
+              width: '160px', 
+              height: '160px', 
+              borderRadius: '50%', 
+              objectFit: 'cover',
+              border: '3px solid rgba(255, 255, 255, 0.15)',
+              boxShadow: '0 8px 24px rgba(0, 0, 0, 0.5), 0 0 20px rgba(18, 214, 64, 0.2)',
+              transition: 'all 0.3s ease',
+              cursor: 'pointer',
+              zIndex: 10
+            }} 
+            onMouseOver={(e) => {
+              e.currentTarget.style.transform = 'translateY(-5px) scale(1.02)';
+              e.currentTarget.style.boxShadow = '0 12px 28px rgba(0, 0, 0, 0.6), 0 0 30px rgba(18, 214, 64, 0.4)';
+              e.currentTarget.style.border = '3px solid rgba(18, 214, 64, 0.5)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.transform = 'translateY(0) scale(1)';
+              e.currentTarget.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.5), 0 0 20px rgba(18, 214, 64, 0.2)';
+              e.currentTarget.style.border = '3px solid rgba(255, 255, 255, 0.15)';
+            }}
+          />
+        </div>
         <h1><a href="index.html">TCN Bandara</a></h1>
         <h2 style={{ color: '#fff' }}>
           I'm a <span className="typing" style={{ color: '#12D640' }}></span>
