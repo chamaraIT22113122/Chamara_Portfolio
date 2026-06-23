@@ -3,6 +3,7 @@ import { collection, onSnapshot, addDoc, deleteDoc, doc, updateDoc } from 'fireb
 import { db } from '../../firebase/config';
 import { toast } from 'react-toastify';
 import { uploadImage, uploadMultipleImages } from '../../utils/uploadImage';
+import { resolveImagePath } from '../../utils/resolveImage';
 
 const ManageProjects = () => {
   const [projects, setProjects] = useState([]);
@@ -135,12 +136,6 @@ const ManageProjects = () => {
   const removeImageFromArray = async (indexToRemove) => {
     const updatedImages = formData.images.filter((_, idx) => idx !== indexToRemove);
     setFormData({ ...formData, images: updatedImages });
-  };
-
-  const resolveImagePath = (path) => {
-    if (!path) return '';
-    if (path.startsWith('http') || path.startsWith('data:') || path.startsWith('/')) return path;
-    return '/' + path;
   };
 
   return (

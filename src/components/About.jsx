@@ -1,5 +1,6 @@
 import React from 'react';
 import { aboutData, interestsData } from '../data/portfolioData';
+import { resolveImagePath } from '../utils/resolveImage';
 
 const About = () => {
   return (
@@ -13,7 +14,7 @@ const About = () => {
         
         <div className="row">
           <div className="col-lg-4" data-aos="fade-right">
-            <img src="dp.jpg" className="img-fluid" alt="Profile" />
+            <img src={resolveImagePath('dp.jpg')} className="img-fluid" alt="Profile" />
           </div>
           <div className="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left"><br />
             <p>{aboutData.description}</p>

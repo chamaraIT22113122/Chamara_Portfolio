@@ -3,6 +3,7 @@ import { collection, onSnapshot, addDoc, deleteDoc, doc, updateDoc } from 'fireb
 import { db } from '../../firebase/config';
 import { toast } from 'react-toastify';
 import { uploadImage } from '../../utils/uploadImage';
+import { resolveImagePath } from '../../utils/resolveImage';
 import ReactQuill from 'react-quill-new';
 import 'react-quill-new/dist/quill.snow.css';
 
@@ -95,12 +96,6 @@ const ManageEducation = () => {
         toast.error('Failed to delete education');
       }
     }
-  };
-
-  const resolveImagePath = (path) => {
-    if (!path) return '';
-    if (path.startsWith('http') || path.startsWith('data:') || path.startsWith('/')) return path;
-    return '/' + path;
   };
 
   return (

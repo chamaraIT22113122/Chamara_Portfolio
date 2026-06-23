@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { portfolioFilters } from '../data/portfolioData';
 import { collection, onSnapshot } from 'firebase/firestore';
 import { db } from '../firebase/config';
+import { resolveImagePath } from '../utils/resolveImage';
 
 const Portfolio = () => {
   const [filter, setFilter] = useState('*');
@@ -76,18 +77,18 @@ const Portfolio = () => {
                 className={`col-lg-4 col-md-6 portfolio-item ${project.category.replace('.', '')}`}
               >
                 <div className="portfolio-wrap">
-                  <img src={project.image || (project.images && project.images[0])} className="img-fluid" alt={project.title} style={{ width: '100%', height: '250px', objectFit: 'cover' }} />
+                  <img src={resolveImagePath(project.image || (project.images && project.images[0]))} className="img-fluid" alt={project.title} style={{ width: '100%', height: '250px', objectFit: 'cover' }} />
                   <div className="portfolio-info">
                     <h3 className="text-center">{project.title}</h3>
                     <div className="portfolio-links">
                       {project.category === '.filter-graphic' && project.images && project.images.length > 0 ? (
                         <>
-                          <a href={project.images[0]} data-gall={`gallery-${project.id}`} className="venobox" title={project.title}>
+                          <a href={resolveImagePath(project.images[0])} data-gall={`gallery-${project.id}`} className="venobox" title={project.title}>
                             <i className="bx bx-plus"></i>
                           </a>
                           {/* Hidden anchor tags for the rest of the images in the gallery */}
                           {project.images.slice(1).map((imgUrl, idx) => (
-                            <a key={idx} href={imgUrl} data-gall={`gallery-${project.id}`} className="venobox" style={{ display: 'none' }} title={`${project.title} - Image ${idx + 2}`}></a>
+                            <a key={idx} href={resolveImagePath(imgUrl)} data-gall={`gallery-${project.id}`} className="venobox" style={{ display: 'none' }} title={`${project.title} - Image ${idx + 2}`}></a>
                           ))}
                         </>
                       ) : (

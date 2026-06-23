@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { collection, onSnapshot, doc } from 'firebase/firestore';
 import { db } from '../firebase/config';
+import { resolveImagePath } from '../utils/resolveImage';
 
 const Skills = () => {
   const [skillsList, setSkillsList] = useState([]);
@@ -61,7 +62,7 @@ const Skills = () => {
                         {catSkills.map(skill => (
                           <img 
                             key={skill.id} 
-                            src={skill.iconUrl} 
+                            src={resolveImagePath(skill.iconUrl)} 
                             alt={skill.name} 
                             title={skill.name}
                             style={{ height: '50px', objectFit: 'contain', maxWidth: '150px' }} 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { collection, onSnapshot } from 'firebase/firestore';
 import { db } from '../firebase/config';
+import { resolveImagePath } from '../utils/resolveImage';
 
 const Education = () => {
   const [educationList, setEducationList] = useState([]);
@@ -52,7 +53,7 @@ const Education = () => {
               <div key={edu.id} className="col-lg-6 col-md-6 mb-4">
                 <div className="education-card" data-aos="fade-up" data-aos-delay={index * 100}>
                   <img 
-                    src={edu.imageUrl || getImageForInstitution(edu.institution)} 
+                    src={resolveImagePath(edu.imageUrl || getImageForInstitution(edu.institution))} 
                     className="education-img img-fluid" 
                     alt={`${edu.institution} Logo`} 
                   />

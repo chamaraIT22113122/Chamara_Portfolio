@@ -3,6 +3,7 @@ import { collection, onSnapshot, addDoc, deleteDoc, doc, updateDoc } from 'fireb
 import { db } from '../../firebase/config';
 import { toast } from 'react-toastify';
 import { uploadImage } from '../../utils/uploadImage';
+import { resolveImagePath } from '../../utils/resolveImage';
 
 const ManageSkills = () => {
   const [skills, setSkills] = useState([]);
@@ -91,12 +92,6 @@ const ManageSkills = () => {
         toast.error('Failed to delete skill');
       }
     }
-  };
-
-  const resolveImagePath = (path) => {
-    if (!path) return '';
-    if (path.startsWith('http') || path.startsWith('data:') || path.startsWith('/')) return path;
-    return '/' + path;
   };
 
   return (
