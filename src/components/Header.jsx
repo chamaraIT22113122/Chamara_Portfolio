@@ -30,7 +30,11 @@ const Header = () => {
             <li><a href="#skills"> <span>Skills</span></a></li>
             <li><a href={resumeUrl} target="_blank" rel="noopener noreferrer"> <span>Resume</span></a></li>
             <li><a href="#contacts"> <span>Contact</span></a></li>
-            <li><a href="#/login" style={{ opacity: 0.05, cursor: 'pointer', userSelect: 'none' }} title="Admin Login">.</a></li>
+            <li>
+              <a href="#/login" style={{ opacity: 0.2, cursor: 'pointer', fontSize: '14px', paddingLeft: '5px' }} title="Admin Login">
+                <i className="bx bx-lock"></i>
+              </a>
+            </li>
           </ul>
         </nav>
 
