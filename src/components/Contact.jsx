@@ -79,7 +79,7 @@ const Contact = () => {
         <div className="row mt-2">
           {/* Address Section */}
           <div className="col-md-6 d-flex align-items-stretch">
-            <div className="info-box">
+            <div className="info-box glass-panel">
               <i className="bx bx-map"></i>
               <h3>My Address</h3>
               <p>Pinlida Rd, Pattiyawaththa Rd, Kaduwela</p>
@@ -88,7 +88,7 @@ const Contact = () => {
 
           {/* Social Profiles Section */}
           <div className="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
-            <div className="info-box">
+            <div className="info-box glass-panel">
               <i className="bx bx-share-alt"></i>
               <h3>Social Profiles</h3>
               <div className="social-links">
@@ -104,7 +104,7 @@ const Contact = () => {
 
           {/* Email Section */}
           <div className="col-md-6 mt-4 d-flex align-items-stretch">
-            <div className="info-box">
+            <div className="info-box glass-panel">
               <i className="bx bx-envelope"></i>
               <h3>Email</h3>
               <p><a href="mailto:cn1120693@gmail.com">cn1120693@gmail.com</a></p>
@@ -114,7 +114,7 @@ const Contact = () => {
 
           {/* Contact Section */}
           <div className="col-md-6 mt-4 d-flex align-items-stretch">
-            <div className="info-box">
+            <div className="info-box glass-panel">
               <i className="bx bx-phone-call"></i>
               <h3>Contact</h3>
               <p><a href="tel:+94702481691">+94 70 248 1691</a></p>
@@ -130,7 +130,7 @@ const Contact = () => {
               </div>
             )}
 
-            <form onSubmit={handleSubmit} className="php-email-form">
+            <form onSubmit={handleSubmit} className="php-email-form glass-panel" style={{ padding: '30px' }}>
               <div className="row">
                 <div className="col-md-6 form-group">
                   <label htmlFor="name">Your Name</label>

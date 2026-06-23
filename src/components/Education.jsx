@@ -51,7 +51,7 @@ const Education = () => {
           ) : (
             educationList.map((edu, index) => (
               <div key={edu.id} className="col-lg-6 col-md-6 mb-4">
-                <div className="education-card" data-aos="fade-up" data-aos-delay={index * 100}>
+                <div className="education-card glass-panel" data-aos="fade-up" data-aos-delay={index * 100} style={{ padding: '20px', marginBottom: '20px' }}>
                   <img 
                     src={resolveImagePath(edu.imageUrl || getImageForInstitution(edu.institution))} 
                     className="education-img img-fluid" 

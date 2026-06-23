@@ -56,8 +56,8 @@ const Skills = () => {
                   if (catSkills.length === 0) return null;
                   
                   return (
-                    <div key={category} className="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style={{ background: '#fff', marginBottom: '20px' }}>
-                      <h4 style={{ textAlign: 'left', color: '#09203a' }}>{category}</h4>
+                    <div key={category} className="col-md-12 mt-4 mt-md-0 icon-box glass-panel" data-aos="fade-up" data-aos-delay="100" style={{ marginBottom: '20px', padding: '20px' }}>
+                      <h4 style={{ textAlign: 'left', color: '#12d640', marginBottom: '15px' }}>{category}</h4>
                       <p style={{ textAlign: 'left', display: 'flex', flexWrap: 'wrap', gap: '15px', alignItems: 'center' }}>
                         {catSkills.map(skill => (
                           <img 
@@ -85,18 +85,18 @@ const Skills = () => {
             <h2>Resume & Links</h2>
           </div>
           <div className="row">
-            <div className="col-md-3 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
+            <div className="col-md-4 mt-4 mt-md-0 icon-box glass-panel" data-aos="fade-up" data-aos-delay="100" style={{ padding: '20px' }}>
               <a href={resumeUrl} target="_blank" rel="noopener noreferrer">
                 <div className="icon"><i className="icofont-page"></i></div>
               </a>
-              <h4 className="title"><a href={resumeUrl} target="_blank" rel="noopener noreferrer">Resume</a></h4>
+              <h4 className="title"><a href={resumeUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#12d640' }}>Resume</a></h4>
               <p className="description" style={{ color: '#fff' }}>The link contains downloadable resume</p>
             </div>
-            <div className="col-md-3 mt-4 mt-md-0 icon-box" data-aos="fade-up">
+            <div className="col-md-4 mt-4 mt-md-0 icon-box glass-panel" data-aos="fade-up" style={{ padding: '20px' }}>
               <a href="https://github.com/rajaprerak/LeetCode_Problems" target="_blank" rel="noopener noreferrer">
                 <div className="icon"><i className="icofont-link"></i></div>
               </a>
-              <h4 className="title"><a href="https://github.com/rajaprerak/LeetCode_Problems" target="_blank" rel="noopener noreferrer">LeetCode Repository</a></h4>
+              <h4 className="title"><a href="https://github.com/rajaprerak/LeetCode_Problems" target="_blank" rel="noopener noreferrer" style={{ color: '#12d640' }}>LeetCode Repository</a></h4>
               <p className="description" style={{ color: '#fff' }}> The github repository contains leetcode problems solution in python.</p>
             </div>
           </div>

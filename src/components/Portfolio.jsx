@@ -76,7 +76,7 @@ const Portfolio = () => {
                 key={project.id}
                 className={`col-lg-4 col-md-6 portfolio-item ${project.category.replace('.', '')}`}
               >
-                <div className="portfolio-wrap">
+                <div className="portfolio-wrap glass-panel">
                   <img src={resolveImagePath(project.image || (project.images && project.images[0]))} className="img-fluid" alt={project.title} style={{ width: '100%', height: '250px', objectFit: 'cover' }} />
                   <div className="portfolio-info">
                     <h3 className="text-center">{project.title}</h3>

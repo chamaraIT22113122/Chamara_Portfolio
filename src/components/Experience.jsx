@@ -37,7 +37,7 @@ const Experience = () => {
           ) : (
             experienceList.map((exp, index) => (
               <div key={exp.id} className="col-lg-12" data-aos="fade-up" data-aos-delay={index * 100}>
-                <div className="experience-item icon-box" style={{ textAlign: 'left' }}>
+                <div className="experience-item icon-box glass-panel" style={{ textAlign: 'left', padding: '25px', marginBottom: '20px' }}>
                   <h4>
                     <span style={{ color: '#12d640' }}>{exp.company}</span>
                   </h4>
