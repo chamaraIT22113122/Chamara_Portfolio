@@ -17,7 +17,7 @@ const Header = () => {
   return (
     <header id="header" className="header-tops">
       <div className="container">
-        <div style={{ marginBottom: '25px', display: 'flex' }}>
+        <div className="home-avatar-container" style={{ marginBottom: '25px', display: 'flex' }}>
           <img 
             src={resolveImagePath('dp.jpg')} 
             alt="TCN Bandara" 

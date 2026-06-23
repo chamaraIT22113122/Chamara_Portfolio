@@ -109,3 +109,8 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+/* Hide home avatar when header becomes top nav */
+#header.header-top .home-avatar-container {
+  display: none !important;
+}
