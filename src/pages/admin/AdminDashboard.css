@@ -1,0 +1,79 @@
+/* AdminDashboard.css */
+
+.admin-layout {
+  position: relative;
+  z-index: 9999;
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f6f9;
+  flex-direction: row;
+}
+
+.admin-sidebar {
+  width: 250px;
+  background-color: #040b14;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease-in-out;
+}
+
+.admin-content {
+  flex: 1;
+  padding: 40px;
+  overflow-x: hidden;
+}
+
+.admin-nav-item {
+  display: block;
+  padding: 15px 20px;
+  color: #a8a9b4;
+  text-decoration: none;
+  border-left: 4px solid transparent;
+  transition: 0.3s;
+}
+
+.admin-nav-item:hover {
+  color: #fff;
+  background-color: #212431;
+}
+
+.admin-nav-item.active {
+  color: #149ddd;
+  background-color: #212431;
+  border-left: 4px solid #149ddd;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .admin-layout {
+    flex-direction: column;
+  }
+  
+  .admin-sidebar {
+    width: 100%;
+    height: auto;
+  }
+  
+  .admin-sidebar nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .admin-nav-item {
+    padding: 10px 15px;
+    border-left: none;
+    border-bottom: 4px solid transparent;
+    font-size: 14px;
+  }
+  
+  .admin-nav-item.active {
+    border-left: none;
+    border-bottom: 4px solid #149ddd;
+  }
+
+  .admin-content {
+    padding: 20px 10px;
+  }
+}

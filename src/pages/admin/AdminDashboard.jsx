@@ -12,6 +12,8 @@ import ManageResume from './ManageResume';
 import AdminHome from './AdminHome';
 import AdminSettings from './AdminSettings';
 
+import './AdminDashboard.css';
+
 const AdminDashboard = () => {
   const auth = getAuth(app);
   const navigate = useNavigate();
@@ -34,9 +36,9 @@ const AdminDashboard = () => {
   ];
 
   return (
-    <div style={{ position: 'relative', zIndex: 9999, display: 'flex', minHeight: '100vh', backgroundColor: '#f4f6f9' }}>
+    <div className="admin-layout">
       {/* Sidebar */}
-      <div style={{ width: '250px', backgroundColor: '#040b14', color: '#fff', display: 'flex', flexDirection: 'column' }}>
+      <div className="admin-sidebar">
         <div style={{ padding: '20px', fontSize: '24px', fontWeight: 'bold', borderBottom: '1px solid #149ddd' }}>
           Admin Panel
         </div>
@@ -46,15 +48,7 @@ const AdminDashboard = () => {
               <li key={item.name}>
                 <Link 
                   to={item.path} 
-                  style={{ 
-                    display: 'block', 
-                    padding: '15px 20px', 
-                    color: location.pathname === item.path ? '#149ddd' : '#a8a9b4',
-                    textDecoration: 'none',
-                    backgroundColor: location.pathname === item.path ? '#212431' : 'transparent',
-                    borderLeft: location.pathname === item.path ? '4px solid #149ddd' : '4px solid transparent',
-                    transition: '0.3s'
-                  }}
+                  className={`admin-nav-item ${location.pathname === item.path ? 'active' : ''}`}
                 >
                   {item.name}
                 </Link>
@@ -73,7 +67,7 @@ const AdminDashboard = () => {
       </div>
 
       {/* Main Content */}
-      <div style={{ flex: 1, padding: '40px' }}>
+      <div className="admin-content">
         <div style={{ backgroundColor: '#fff', color: '#333', padding: '30px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)', minHeight: '500px' }}>
           <Routes>
             <Route path="/" element={<AdminHome />} />
