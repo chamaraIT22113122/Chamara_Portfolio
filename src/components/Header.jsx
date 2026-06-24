@@ -3,6 +3,7 @@ import { doc, onSnapshot } from 'firebase/firestore';
 import { db } from '../firebase/config';
 import { resolveImagePath } from '../utils/resolveImage';
 import Magnetic from './Magnetic';
+import heroImg from '../assets/hero.png';
 
 const Header = () => {
   const [resumeUrl, setResumeUrl] = useState('https://drive.google.com/file/d/1Xw7PZjy3yXD_wo_YKTA7428sq6h_7cB0/view?usp=sharing');
@@ -51,9 +52,9 @@ const Header = () => {
               <Magnetic><a href="https://wa.me/+94702481691" target="_blank" rel="noopener noreferrer" className="whatsapp"><i className="bx bxl-whatsapp"></i></a></Magnetic>
             </div>
           </div>
-          <div className="col-lg-4 d-none d-lg-flex justify-content-center hero-image-container">
+          <div className="col-lg-4 d-none d-lg-flex justify-content-end align-self-end hero-image-container">
             <img 
-              src="/assets/img/me.png" 
+              src={heroImg} 
               alt="Chamara" 
               className="img-fluid" 
               style={{ maxHeight: '75vh', objectFit: 'contain', filter: 'drop-shadow(0 0 20px rgba(18, 214, 64, 0.15))' }} 
