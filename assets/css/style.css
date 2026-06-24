@@ -1261,3 +1261,73 @@ section .container {
   0% { background-position: 0% 50%; }
   100% { background-position: 100% 50%; }
 }
+
+/*--------------------------------------------------------------
+# Global Apple Glassmorphism UI Updates
+--------------------------------------------------------------*/
+
+/* Apply rounded corners to all images */
+img {
+  border-radius: 16px;
+}
+
+/* Ensure buttons have rounded corners and slight translucency */
+.btn, button, input[type="submit"], input[type="button"] {
+  border-radius: 50px !important;
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+}
+
+/* Form inputs styling */
+input, textarea, .form-control {
+  border-radius: 16px !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+
+input:focus, textarea:focus, .form-control:focus {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(18, 214, 64, 0.5) !important;
+}
+
+/* Header Top glass effect */
+#header.header-top {
+  background: rgba(0, 0, 0, 0.6) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Mobile Nav Menu Dropdown glass effect */
+.navbar-mobile {
+  background: rgba(15, 15, 15, 0.8) !important;
+  backdrop-filter: blur(25px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(25px) saturate(200%) !important;
+  border-radius: 24px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Custom Mac-style Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
