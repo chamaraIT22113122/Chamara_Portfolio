@@ -20,7 +20,7 @@ const Header = () => {
     <header id="header" className="header-tops">
       <div className="container">
         <div className="row align-items-center w-100">
-          <div className="col-lg-8 d-flex flex-column justify-content-center align-items-center text-center header-content-col">
+          <div className="col-12 d-flex flex-column justify-content-center align-items-center text-center header-content-col">
             <h1><a href="index.html">TCN Bandara</a></h1>
             <h2 style={{ color: '#fff' }}>
               I'm a <span className="typing" style={{ color: '#12D640' }}></span>
@@ -52,16 +52,6 @@ const Header = () => {
               <Magnetic><a href="https://wa.me/+94702481691" target="_blank" rel="noopener noreferrer" className="whatsapp"><i className="bx bxl-whatsapp"></i></a></Magnetic>
             </div>
           </div>
-
-          <div className="col-lg-4 d-none d-lg-flex justify-content-center align-items-center position-relative hero-image-container">
-            <img 
-              src={resolveImagePath('assets/img/dp.png')} 
-              alt="Chamara" 
-              className="img-fluid" 
-              style={{ maxHeight: '65vh', objectFit: 'contain', filter: 'drop-shadow(0 0 20px rgba(18, 214, 64, 0.15))', zIndex: 2, position: 'relative' }} 
-            />
-          </div>
-
         </div>
       </div>
     </header>
