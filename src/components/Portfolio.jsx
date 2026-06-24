@@ -4,8 +4,10 @@ import { portfolioFilters } from '../data/portfolioData';
 import { collection, onSnapshot } from 'firebase/firestore';
 import { db } from '../firebase/config';
 import { resolveImagePath } from '../utils/resolveImage';
+import { useAnimeReveal } from '../hooks/useAnimeReveal';
 
 const Portfolio = () => {
+  const filtersRef = useAnimeReveal();
   const [filter, setFilter] = useState('*');
   const [filteredProjects, setFilteredProjects] = useState([]);
   const [allProjects, setAllProjects] = useState([]);
@@ -48,7 +50,7 @@ const Portfolio = () => {
         </div>
 
         <div className="row">
-          <div className="col-lg-12 d-flex justify-content-center">
+          <div className="col-lg-12 d-flex justify-content-center" ref={filtersRef}>
             <ul id="portfolio-flters">
               {portfolioFilters.map(item => (
                 <li

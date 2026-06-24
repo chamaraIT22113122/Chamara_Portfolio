@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { collection, onSnapshot, doc } from 'firebase/firestore';
 import { db } from '../firebase/config';
 import { resolveImagePath } from '../utils/resolveImage';
+import { useAnimeReveal } from '../hooks/useAnimeReveal';
 
 const Skills = () => {
+  const skillsRef = useAnimeReveal();
+  const linksRef = useAnimeReveal({ staggerDelay: 150 });
   const [skillsList, setSkillsList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [resumeUrl, setResumeUrl] = useState('https://drive.google.com/file/d/1Xw7PZjy3yXD_wo_YKTA7428sq6h_7cB0/view?usp=sharing');
@@ -41,7 +44,7 @@ const Skills = () => {
             <h2>Skills</h2>
           </div>
           <div className="row">
-            <div className="col-lg-12" data-aos="fade-up">
+            <div className="col-lg-12" ref={skillsRef}>
               {loading ? (
                 <div className="text-center my-5">
                   <div className="spinner-border text-primary" role="status">
@@ -56,7 +59,7 @@ const Skills = () => {
                   if (catSkills.length === 0) return null;
                   
                   return (
-                    <div key={category} className="col-md-12 mt-4 mt-md-0 icon-box glass-panel" data-aos="fade-up" data-aos-delay="100" style={{ marginBottom: '20px', padding: '20px' }}>
+                    <div key={category} className="col-md-12 mt-4 mt-md-0 icon-box glass-panel" style={{ marginBottom: '20px', padding: '20px' }}>
                       <h4 style={{ textAlign: 'left', color: '#12d640', marginBottom: '15px' }}>{category}</h4>
                       <p style={{ textAlign: 'left', display: 'flex', flexWrap: 'wrap', gap: '15px', alignItems: 'center' }}>
                         {catSkills.map(skill => (
@@ -84,15 +87,15 @@ const Skills = () => {
           <div className="section-title">
             <h2>Resume & Links</h2>
           </div>
-          <div className="row">
-            <div className="col-md-4 mt-4 mt-md-0 icon-box glass-panel" data-aos="fade-up" data-aos-delay="100" style={{ padding: '20px' }}>
+          <div className="row" ref={linksRef}>
+            <div className="col-md-4 mt-4 mt-md-0 icon-box glass-panel" style={{ padding: '20px' }}>
               <a href={resumeUrl} target="_blank" rel="noopener noreferrer">
                 <div className="icon"><i className="icofont-page"></i></div>
               </a>
               <h4 className="title"><a href={resumeUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#12d640' }}>Resume</a></h4>
               <p className="description" style={{ color: '#fff' }}>The link contains downloadable resume</p>
             </div>
-            <div className="col-md-4 mt-4 mt-md-0 icon-box glass-panel" data-aos="fade-up" style={{ padding: '20px' }}>
+            <div className="col-md-4 mt-4 mt-md-0 icon-box glass-panel" style={{ padding: '20px' }}>
               <a href="https://github.com/rajaprerak/LeetCode_Problems" target="_blank" rel="noopener noreferrer">
                 <div className="icon"><i className="icofont-link"></i></div>
               </a>

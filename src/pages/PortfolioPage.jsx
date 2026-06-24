@@ -7,7 +7,6 @@ import Portfolio from '../components/Portfolio';
 import Skills from '../components/Skills';
 import Contact from '../components/Contact';
 import SEO from '../components/SEO';
-import ThemeToggle from '../components/ThemeToggle';
 
 const PortfolioPage = () => {
   const initialized = useRef(false);
@@ -49,7 +48,6 @@ const PortfolioPage = () => {
       <Portfolio />
       <Skills />
       <Contact />
-      <ThemeToggle />
     </>
   );
 };

@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { collection, onSnapshot } from 'firebase/firestore';
 import { db } from '../firebase/config';
 import { resolveImagePath } from '../utils/resolveImage';
+import { useAnimeReveal } from '../hooks/useAnimeReveal';
 
 const Education = () => {
+  const eduRef = useAnimeReveal();
   const [educationList, setEducationList] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -38,7 +40,7 @@ const Education = () => {
         <div className="section-title">
           <h2>Education</h2>
         </div>
-        <div className="row">
+        <div className="row" ref={eduRef}>
           
           {loading ? (
             <div className="col-12 text-center my-5">
@@ -51,7 +53,7 @@ const Education = () => {
           ) : (
             educationList.map((edu, index) => (
               <div key={edu.id} className="col-lg-6 col-md-6 mb-4">
-                <div className="education-card glass-panel" data-aos="fade-up" data-aos-delay={index * 100} style={{ padding: '20px', marginBottom: '20px' }}>
+                <div className="education-card glass-panel" style={{ padding: '20px', marginBottom: '20px' }}>
                   <img 
                     src={resolveImagePath(edu.imageUrl || getImageForInstitution(edu.institution))} 
                     className="education-img img-fluid" 

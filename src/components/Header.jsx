@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { doc, onSnapshot } from 'firebase/firestore';
 import { db } from '../firebase/config';
 import { resolveImagePath } from '../utils/resolveImage';
+import Magnetic from './Magnetic';
 
 const Header = () => {
   const [resumeUrl, setResumeUrl] = useState('https://drive.google.com/file/d/1Xw7PZjy3yXD_wo_YKTA7428sq6h_7cB0/view?usp=sharing');
@@ -41,12 +42,12 @@ const Header = () => {
         </nav>
 
         <div className="social-links">
-          <a href="https://www.linkedin.com/in/chamara-nuwan-032a35323" target="_blank" rel="noopener noreferrer" className="linkedin"><i className="bx bxl-linkedin"></i></a>
-          <a href="https://github.com/chamaraIT22113122" target="_blank" rel="noopener noreferrer" className="github"><i className="bx bxl-github"></i></a>
-          <a href="mailto:cn1120693@gmail.com" target="_blank" rel="noopener noreferrer" className="google"><i className="bx bxl-google"></i></a>
-          <a href="https://www.instagram.com/Cha__m_a" target="_blank" rel="noopener noreferrer" className="instagram"><i className="bx bxl-instagram"></i></a>
-          <a href="https://www.facebook.com/chamara.nuwan.332345" target="_blank" rel="noopener noreferrer" className="facebook"><i className="bx bxl-facebook"></i></a>
-          <a href="https://wa.me/+94702481691" target="_blank" rel="noopener noreferrer" className="whatsapp"><i className="bx bxl-whatsapp"></i></a>
+          <Magnetic><a href="https://www.linkedin.com/in/chamara-nuwan-032a35323" target="_blank" rel="noopener noreferrer" className="linkedin"><i className="bx bxl-linkedin"></i></a></Magnetic>
+          <Magnetic><a href="https://github.com/chamaraIT22113122" target="_blank" rel="noopener noreferrer" className="github"><i className="bx bxl-github"></i></a></Magnetic>
+          <Magnetic><a href="mailto:cn1120693@gmail.com" target="_blank" rel="noopener noreferrer" className="google"><i className="bx bxl-google"></i></a></Magnetic>
+          <Magnetic><a href="https://www.instagram.com/Cha__m_a" target="_blank" rel="noopener noreferrer" className="instagram"><i className="bx bxl-instagram"></i></a></Magnetic>
+          <Magnetic><a href="https://www.facebook.com/chamara.nuwan.332345" target="_blank" rel="noopener noreferrer" className="facebook"><i className="bx bxl-facebook"></i></a></Magnetic>
+          <Magnetic><a href="https://wa.me/+94702481691" target="_blank" rel="noopener noreferrer" className="whatsapp"><i className="bx bxl-whatsapp"></i></a></Magnetic>
         </div>
       </div>
     </header>

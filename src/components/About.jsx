@@ -1,8 +1,12 @@
 import React from 'react';
 import { aboutData, interestsData } from '../data/portfolioData';
 import { resolveImagePath } from '../utils/resolveImage';
+import { useAnimeReveal } from '../hooks/useAnimeReveal';
 
 const About = () => {
+  const aboutRef = useAnimeReveal();
+  const interestsRef = useAnimeReveal({ staggerDelay: 150 });
+
   return (
     <section id="about" className="about">
       {/* ======= About Me ======= */}
@@ -12,11 +16,11 @@ const About = () => {
           <h2>About</h2>
         </div>
         
-        <div className="row">
-          <div className="col-lg-4" data-aos="fade-right">
+        <div className="row" ref={aboutRef}>
+          <div className="col-lg-4">
             <img src={resolveImagePath('dp.jpg')} className="img-fluid" alt="Profile" />
           </div>
-          <div className="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left"><br />
+          <div className="col-lg-8 pt-4 pt-lg-0 content"><br />
             <p>{aboutData.description}</p>
             <br /><br />
             <div className="row">
@@ -47,7 +51,7 @@ const About = () => {
           <h2>Interests</h2>
         </div>
       
-        <div className="row">
+        <div className="row" ref={interestsRef}>
           {interestsData.map(interest => (
             <div key={interest.id} className="col-lg-3 col-md-4 mt-4 mt-md-0" style={interest.id > 1 ? { marginTop: '24px' } : {}}>
               <div className="icon-box">
