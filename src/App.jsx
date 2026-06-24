@@ -6,6 +6,7 @@ import PortfolioPage from './pages/PortfolioPage';
 import ErrorBoundary from './components/ErrorBoundary';
 import app from './firebase/config';
 import { getAuth } from 'firebase/auth';
+import StellarBackground from './components/StellarBackground';
 
 // Lazy load admin components to significantly reduce public site bundle size
 const AdminLogin = lazy(() => import('./pages/admin/AdminLogin'));
@@ -49,6 +50,7 @@ const SuspenseFallback = () => (
 function App() {
   return (
     <Router>
+      <StellarBackground />
       <ToastContainer position="top-right" autoClose={3000} />
       <ErrorBoundary>
         <Suspense fallback={<SuspenseFallback />}>
