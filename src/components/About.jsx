@@ -18,7 +18,7 @@ const About = () => {
         
         <div className="row" ref={aboutRef}>
           <div className="col-lg-4">
-            <img src={resolveImagePath('dp.png')} className="img-fluid" alt="Profile" />
+            <img src={resolveImagePath('assets/img/dp.png')} className="img-fluid" alt="Profile" />
           </div>
           <div className="col-lg-8 pt-4 pt-lg-0 content"><br />
             <p>{aboutData.description}</p>
