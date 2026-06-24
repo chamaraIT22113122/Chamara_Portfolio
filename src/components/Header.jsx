@@ -3,7 +3,7 @@ import { doc, onSnapshot } from 'firebase/firestore';
 import { db } from '../firebase/config';
 import { resolveImagePath } from '../utils/resolveImage';
 import Magnetic from './Magnetic';
-import heroImg from '../assets/hero.png';
+
 
 const Header = () => {
   const [resumeUrl, setResumeUrl] = useState('https://drive.google.com/file/d/1Xw7PZjy3yXD_wo_YKTA7428sq6h_7cB0/view?usp=sharing');
@@ -59,13 +59,6 @@ const Header = () => {
               alt="Chamara" 
               className="img-fluid" 
               style={{ maxHeight: '75vh', objectFit: 'contain', filter: 'drop-shadow(0 0 20px rgba(18, 214, 64, 0.15))', zIndex: 2, position: 'relative' }} 
-            />
-            {/* 3D Box */}
-            <img 
-              src={heroImg} 
-              alt="3D Box" 
-              className="position-absolute" 
-              style={{ right: '-80px', bottom: '0', maxHeight: '50vh', zIndex: 1, opacity: 0.9 }} 
             />
           </div>
         </div>
