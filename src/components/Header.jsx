@@ -20,7 +20,7 @@ const Header = () => {
     <header id="header" className="header-tops">
       <div className="container">
         <div className="row align-items-center w-100">
-          <div className="col-lg-8 d-flex flex-column justify-content-center align-items-start text-start header-content-col">
+          <div className="col-12 d-flex flex-column justify-content-center align-items-center text-center header-content-col">
             <h1><a href="index.html">TCN Bandara</a></h1>
             <h2 style={{ color: '#fff' }}>
               I'm a <span className="typing" style={{ color: '#12D640' }}></span>
